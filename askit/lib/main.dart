@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import "subjectcard.dart";
+import "data.dart";
 
 void main() {
   runApp(const MyApp());
@@ -14,22 +15,19 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
-        primarySwatch: Colors.red,
+        primarySwatch: Colors.green,
       ),
       home: Scaffold(
+        appBar: AppBar(title: Text("Choose your Subject")),
         body: GridView.count(
           primary: false,
           padding: const EdgeInsets.all(20),
           crossAxisSpacing: 10,
           mainAxisSpacing: 10,
           crossAxisCount: 2,
-          children: <Widget>[
-            SubjectCard("English"),
-            SubjectCard("Math"),
-            SubjectCard("Engineering"),
-            SubjectCard("Sciences"),
-            SubjectCard("Humanities"),
-          ],
+          children: Data.map((field) {
+            return SubjectCard(field.name.toString(), field.color);
+          }).toList(),
         ),
       ),
     );

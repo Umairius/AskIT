@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import "subjectScreen.dart";
 
 class SubjectCard extends StatelessWidget {
   // const SubjectCard({Key? key}) : super(key: key);
@@ -17,21 +18,29 @@ class SubjectCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      color: Colors.white54,
       child: InkWell(
-        onTap: () => selectSubject(context),
+        onTap: () => Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => SubjectScreen(subject),
+          ),
+        ),
         splashColor: Colors.greenAccent,
-        child: Expanded(
-          child: Card(
-            child: Container(
-              child: Row(
-                children: [
-                  Text(subject),
-                  Text(
-                    "Tap to explore",
-                    textScaleFactor: 0.5,
-                  )
-                ],
-              ),
+        child: Card(
+          child: Container(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  subject,
+                  textScaleFactor: 1.5,
+                ),
+                Text(
+                  "Tap to explore",
+                  textScaleFactor: 0.5,
+                )
+              ],
             ),
           ),
         ),
