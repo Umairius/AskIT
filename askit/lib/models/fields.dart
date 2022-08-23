@@ -5,9 +5,7 @@ import 'package:flutter/cupertino.dart';
 
 class Fields {
   final String? name;
-  final List<String>? subjects;
-  final Color color;
+  var subjects;
 
-  const Fields(
-      {@required this.name, @required this.subjects, required this.color});
+  Fields({required this.name, required this.subjects});
 }

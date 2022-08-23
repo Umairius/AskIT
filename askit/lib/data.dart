@@ -1,27 +1,39 @@
 import 'package:askit/models/fields.dart';
 import 'package:flutter/material.dart';
-
+import './models/subjects.dart';
 import './models/fields.dart';
 
-const Data = [
+var Data = [
   Fields(
-      name: "English",
-      subjects: ["Grammar", "Sheikhspeare", "Essay Writing"],
-      color: Colors.white38),
+    name: "Math",
+    subjects: Subjects(
+        topics: ["Trigonometry", "Calculus", "Geometry"],
+        teachers: ["Sir Yasir", "Hehehhe"]),
+  ),
   Fields(
-      name: "Math",
-      subjects: ["Calculus", "Discrete", "Geometry", "Arithmetic"],
-      color: Colors.white38),
+    name: "English",
+    subjects: Subjects(
+        topics: ["Grammer", "Hehehahah"], teachers: ["Sir Yasir", "Hehehhe"]),
+  ),
   Fields(
-      name: "Science",
-      subjects: ["Biology", "Chemistry", "Physics"],
-      color: Colors.white38),
+    name: "Engineering",
+    subjects: Subjects(
+        topics: ["Fluid", "Ducks", "Geometry"],
+        teachers: ["Sir Yasir", "Hehehhe"]),
+  ),
   Fields(
-      name: "Engineering",
-      subjects: ["Electrical", "Computer", "Mechanical"],
-      color: Colors.white38),
-  Fields(
-      name: "Humanities",
-      subjects: ["Philosophy", "Ethics", "Morality"],
-      color: Colors.white38),
+    name: "Computer",
+    subjects: Subjects(
+        topics: ["Compiler Conctruction", "DSA", "DLD"],
+        teachers: ["Sir Yasir", "Hehehhe"]),
+  ),
 ];
+
+final subjectList = <String>[];
+void getLists() {
+  for (int i = 0; i < Data.length; i++) {
+    for (int j = 0; j < Data[i].subjects.topics.length; j++) {
+      subjectList.add(Data[i].subjects.topics[j]);
+    }
+  }
+}

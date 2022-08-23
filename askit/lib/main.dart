@@ -1,9 +1,12 @@
+// import 'package:askit/videocall/call.dart';
+// import 'package:askit/livestream/call.dart';
+import 'package:askit/Screens/subjectScreen.dart';
 import 'package:flutter/material.dart';
-import "subjectcard.dart";
+
 import "data.dart";
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -17,18 +20,11 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.green,
       ),
-      home: Scaffold(
-        appBar: AppBar(title: Text("Choose your Subject")),
-        body: GridView.count(
-          primary: false,
-          padding: const EdgeInsets.all(20),
-          crossAxisSpacing: 10,
-          mainAxisSpacing: 10,
-          crossAxisCount: 2,
-          children: Data.map((field) {
-            return SubjectCard(field.name.toString(), field.color);
-          }).toList(),
-        ),
+      home: Container(
+        height: 100,
+        width: 100,
+        child: Scaffold(
+            appBar: AppBar(title: const Text("HUEHUE")), body: SubjectScreen()),
       ),
     );
   }
