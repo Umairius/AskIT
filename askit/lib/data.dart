@@ -37,3 +37,9 @@ void getLists() {
     }
   }
 }
+
+void getFieldList() {
+  for (int i = 0; i < Data.length; i++) {
+    print(Data[i].name);
+  }
+}

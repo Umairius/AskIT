@@ -1,6 +1,6 @@
 // import 'package:askit/videocall/call.dart';
 // import 'package:askit/livestream/call.dart';
-import 'package:askit/Screens/subjectScreen.dart';
+import 'package:askit/Screens/fieldScreen.dart';
 import 'package:flutter/material.dart';
 
 import "data.dart";
@@ -24,7 +24,13 @@ class MyApp extends StatelessWidget {
         height: 100,
         width: 100,
         child: Scaffold(
-            appBar: AppBar(title: const Text("HUEHUE")), body: SubjectScreen()),
+            appBar: AppBar(
+              elevation: 10,
+              toolbarHeight: 110,
+              titleSpacing: 40,
+              title: const Text("Choose your Field"),
+            ),
+            body: FieldScreen()),
       ),
     );
   }
